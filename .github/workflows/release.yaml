@@ -1,0 +1,12 @@
+on:
+  release:
+    types: [published]
+
+jobs:
+  check-tag:
+    name: Check tag
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo "${{ github.ref }}"
+      - name: Check tag
+        run: "[[ '${{ github.ref }}' =~ ^refs/tags/[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}$ ]] && echo yes || echo no"
