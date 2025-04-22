@@ -15,7 +15,5 @@ jobs:
       - uses: actions/github-script@v7
         with:
           script: |
-            const script = require('./.github/workflows/scripts/semver.js')
-            console.log(script({ context }))
-      - if: ${{ failure() }}
-        run: echo "::error ::moiccu"
+            const semver = require('./.github/workflows/scripts/semver.js')
+            return semver({ context })
