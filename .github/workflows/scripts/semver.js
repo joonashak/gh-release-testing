@@ -9,5 +9,5 @@ module.exports = async ({ context }) => {
     throw Error("Ref does not contain a valid semver tag.");
   }
 
-  return ref.match(re).groups;
+  return { ...ref.match(re).groups, full: ref.split("/v")[1] };
 };

@@ -21,3 +21,4 @@ jobs:
       - run: echo "${{ steps.semver.outputs.result }}"
       - run: echo "${{ fromJson(steps.semver.outputs.result).major }}"
       - run: echo "${{ fromJson(steps.semver.outputs.result).pre }}"
+      - run: echo "${{ fromJson(steps.semver.outputs.result).full }}"
