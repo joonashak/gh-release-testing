@@ -18,3 +18,7 @@ Output is saved to step outputs as `result` and can be used like so:
 ```yaml
 - run: echo "${{ fromJson(steps.semver.outputs.result).major }}"
 ```
+
+> [!CAUTION]
+> asd
+> dsads
